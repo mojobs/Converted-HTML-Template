@@ -1,5 +1,10 @@
 <style  scoped src="@/assets/css/colors/red.css"></style>
 
+
+<script setup>
+import { defineEmits } from 'vue';
+defineEmits(['open-sidebar'])
+</script>
 <template>
     <!-- Navigation -->
     <header class="nav nav--1">
@@ -9,7 +14,7 @@
 
             <div class="flex-child">
               <!-- Side Menu Button -->
-              <button class="nav-icon-toggle" id="nav-icon-toggle" aria-label="Open side menu">
+              <button @click="$emit('open-sidebar')" class="nav-icon-toggle" id="nav-icon-toggle" aria-label="Open side menu">
                 <span class="nav-icon-toggle__box">
                   <span class="nav-icon-toggle__inner"></span>
                 </span>
