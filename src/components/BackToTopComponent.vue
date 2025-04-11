@@ -1,0 +1,5 @@
+<template>
+     <div id="back-to-top">
+      <a href="#top" aria-label="Go to top"><i class="ui-arrow-up"></i></a>
+    </div>
+</template>
