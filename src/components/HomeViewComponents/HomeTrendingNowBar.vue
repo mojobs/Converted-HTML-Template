@@ -1,5 +1,8 @@
 <script setup>
 import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
+const route = useRoute();
+
 const data = [
   {
     id: "1",
@@ -36,7 +39,7 @@ const currentItem = computed(() => data[currentIndex.value])
 <template>
   <!-- Trending Now -->
   <div class="container">
-    <div class="trending-now">
+    <div :class="{'trending-now': $route.path === '/', 'trending-now--1': $route.path === '/politics' }">
       <span class="trending-now__label">
         <i class="ui-flash"></i>
         <span class="trending-now__text d-lg-inline-block d-none"

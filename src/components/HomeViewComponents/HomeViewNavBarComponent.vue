@@ -28,7 +28,7 @@
                 <a href="index.html">Home</a>
                 <ul class="nav__dropdown-menu">
                   <li><a href="index.html">Home Default</a></li>
-                  <li><a href="index-politics.html">Home Politics</a></li>
+                  <li><RouterLink to="/politics">Home Politics</RouterLink></li>
                   <li><a href="index-fashion.html">Home Fashion</a></li>
                   <li><a href="index-games.html">Home Games</a></li>
                   <li><a href="index-videos.html">Home Videos</a></li>
@@ -226,6 +226,7 @@
 
 <script setup>
 import {defineEmits } from 'vue';
+import { RouterLink } from 'vue-router';
 defineEmits(['open-sidebar'])
 
 
