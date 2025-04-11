@@ -9,9 +9,9 @@
             <!-- Small post -->
             <div class="featured-posts-grid__item featured-posts-grid__item--sm">
               <article class="entry card post-list featured-posts-grid__entry">
-                <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(img/content/hero/hero_post_1.jpg)">
+                <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url('@/assets/img/content/hero/hero_post_1.jpg')">
                   <a href="single-post.html" class="thumb-url"></a>
-                  <img src="img/content/hero/hero_post_1.jpg" alt="" class="entry__img d-none">
+                  <img src="@/assets/img/content/hero/hero_post_1.jpg" alt="" class="entry__img d-none">
                   <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet">World</a>
                 </div>
 
@@ -37,7 +37,7 @@
               <article class="entry card post-list featured-posts-grid__entry">
                 <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(img/content/hero/hero_post_2.jpg)">
                   <a href="single-post.html" class="thumb-url"></a>
-                  <img src="img/content/hero/hero_post_2.jpg" alt="" class="entry__img d-none">
+                  <img src="@/assets/img/content/hero/hero_post_2.jpg" alt="" class="entry__img d-none">
                   <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple">Fashion</a>
                 </div>
 
@@ -63,7 +63,7 @@
               <article class="entry card post-list featured-posts-grid__entry">
                 <div class="entry__img-holder post-list__img-holder card__img-holder" style="background-image: url(img/content/hero/hero_post_3.jpg)">
                   <a href="single-post.html" class="thumb-url"></a>
-                  <img src="img/content/hero/hero_post_3.jpg" alt="" class="entry__img d-none">
+                  <img src="@/assets/img/content/hero/hero_post_3.jpg" alt="keyboard" class="entry__img d-none">
                   <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue">Business</a>
                 </div>
 
@@ -93,7 +93,7 @@
               <article class="entry card featured-posts-grid__entry">
                 <div class="entry__img-holder card__img-holder">
                   <a href="single-post.html">
-                    <img src="img/content/hero/hero_post_4.jpg" alt="" class="entry__img">
+                    <img src="@/assets/img/content/hero/hero_post_4.jpg" alt="" class="entry__img">
                   </a>
                   <a href="categories.html" class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--green">Lifestyle</a>
                 </div>

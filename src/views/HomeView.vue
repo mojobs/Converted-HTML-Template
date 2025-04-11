@@ -1,4 +1,5 @@
 <script setup>
+import HomeFeaturePostsComponent from "@/components/HomeFeaturePostsComponent.vue";
 import HomeSideBarComponent from "@/components/HomeSideBarComponent.vue";
 import HomeTrendingNowBar from "@/components/HomeTrendingNowBar.vue";
 import HomeViewNavBarComponent from "@/components/HomeViewNavBarComponent.vue";
@@ -30,4 +31,5 @@ const showSideBarContentOverlay = () => {
   />
 
   <HomeTrendingNowBar />
+  <HomeFeaturePostsComponent/>
 </template>
