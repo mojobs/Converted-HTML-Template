@@ -1,11 +1,15 @@
 <template>
+<body :class="{'bg-light style-default style-rounded': $route.path == '/', ' home style-politics': $route.path == '/politics'}">
+    <RouterView/>
+    
+</body>
 
-<RouterView/>
 
 </template>
 
 <script>
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute} from 'vue-router';
+const route = useRoute();
 
 
 
