@@ -1,19 +1,83 @@
 <script setup>
-import { defineEmits, defineProps } from 'vue';
-defineEmits(['close-sidebar'])
+import { defineEmits, defineProps, ref } from "vue";
+defineEmits(["close-sidebar"]);
 defineProps({
-  sidebarvalue:{
+  sidebarvalue: {
     type: Boolean,
-    required: true
-  }
-})
+    required: true,
+  },
+});
+const sideMenuData = [
+  {
+    index: 0,
+    datamenu: "Home",
+  },
+  {
+    index: 1,
+    datamenu: "Pages",
+  },
+  {
+    index: 2,
+    datamenu: "Features",
+  },
+];
+
+const specificsidebarcomponents = [
+  {
+    sidebaroptions: [
+      "Home Default",
+      "Home Politics",
+      "Home Fashion",
+      "Home Games",
+      "Home Videos",
+      "Home Music",
+    ],
+    sidebaroptionspath: [
+      "index.html",
+      "index-politics.html",
+      "index-fashion.html",
+      "index-games.html",
+      "index-videos.html",
+      "index-music.html",
+    ],
+  },
+  {
+    sidebaroptions: ["About", "Contact", "Search Results", "Categories", "404"],
+    sidebaroptionspath: [
+      "about.html",
+      "contact.html",
+      "search-results.html",
+      "categories.html",
+      "404.html",
+    ],
+  },
+  {
+    sidebaroptions: ["Single Post", "Shortcodes"],
+    sidebaroptionspath: ["#", "shortcodes.html"],
+  },
+];
+const openedIndex = ref(null);
+const toggleInternalSideBarContent = (index) => {
+  openedIndex.value = openedIndex.value === index ? "null" : index;
+};
 </script>
 
 <template>
-  <header :class="{'sidenav sidenav--is-open': sidebarvalue, 'sidenav': !sidebarvalue}" id="sidenav">
+  <header
+    :class="{
+      'sidenav sidenav--is-open': sidebarvalue,
+      sidenav: !sidebarvalue,
+    }"
+    id="sidenav"
+  >
     <!-- close -->
-    <div class="sidenav__close" >
-      <button @click="$emit('close-sidebar')" class="sidenav__close-button"  id="sidenav__close-button" aria-label="close sidenav">
+    <div class="sidenav__close">
+      <button
+        @click="$emit('close-sidebar')"
+        class="sidenav__close-button"
+        id="sidenav__close-button"
+        aria-label="close sidenav"
+      >
         <i class="ui-close sidenav__close-icon"></i>
       </button>
     </div>
@@ -21,54 +85,35 @@ defineProps({
     <!-- Nav -->
     <nav class="sidenav__menu-container">
       <ul class="sidenav__menu" role="menubar">
-        <li>
-          <a href="#" class="sidenav__menu-url">Home</a>
-          <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown">
+        <li
+          v-for="(data, i) in sideMenuData"
+          :key="data.datamenu"
+          :class="{ 'sidenav__menu--is-open': openedIndex === i }"
+        >
+          <a href="#" class="sidenav__menu-url">{{ data.datamenu }}</a>
+          <button
+            @click="toggleInternalSideBarContent(i)"
+            class="sidenav__menu-toggle"
+            aria-haspopup="true"
+            aria-label="Open dropdown"
+          >
             <i class="ui-arrow-down"></i>
           </button>
-          <ul class="sidenav__menu-dropdown">
-            <li><a href="index.html" class="sidenav__menu-url">Home Default</a></li>
-            <li><a href="index-politics.html" class="sidenav__menu-url">Home Politics</a></li>
-            <li><a href="index-fashion.html" class="sidenav__menu-url">Home Fashion</a></li>
-            <li><a href="index-games.html" class="sidenav__menu-url">Home Games</a></li>
-            <li><a href="index-videos.html" class="sidenav__menu-url">Home Videos</a></li>
-            <li><a href="index-music.html" class="sidenav__menu-url">Home Music</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="sidenav__menu-url">Pages</a>
-          <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown">
-            <i class="ui-arrow-down"></i>
-          </button>
-          <ul class="sidenav__menu-dropdown">
-            <li><a href="about.html" class="sidenav__menu-url">About</a></li>
-            <li><a href="contact.html" class="sidenav__menu-url">Contact</a></li>
-            <li><a href="search-results.html" class="sidenav__menu-url">Search Results</a></li>
-            <li><a href="categories.html" class="sidenav__menu-url">Categories</a></li>
-            <li><a href="404.html" class="sidenav__menu-url">404</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="sidenav__menu-url">Features</a>
-          <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown">
-            <i class="ui-arrow-down"></i>
-          </button>
-          <ul class="sidenav__menu-dropdown">
-            <li>
-              <a href="#" class="sidenav__menu-url">Single Post</a>
-              <button class="sidenav__menu-toggle" aria-haspopup="true" aria-label="Open dropdown">
-                <i class="ui-arrow-down"></i>
-              </button>
-              <ul class="sidenav__menu-dropdown">
-                <li><a href="single-post.html" class="sidenav__menu-url">Style 1</a></li>
-                <li><a href="single-post-politics.html" class="sidenav__menu-url">Style 2</a></li>
-                <li><a href="single-post-fashion.html" class="sidenav__menu-url">Style 3</a></li>
-                <li><a href="single-post-games.html" class="sidenav__menu-url">Style 4</a></li>
-                <li><a href="single-post-videos.html" class="sidenav__menu-url">Style 5</a></li>
-                <li><a href="single-post-music.html" class="sidenav__menu-url">Style 6</a></li>
-              </ul>
+          <ul
+            :class="{ 'sidenav__menu-dropdown': true, 'show': openedIndex === i }"
+            :style="{ display: openedIndex === i ? 'block' : 'none' }"
+          >
+            <li
+              v-for="(option, index) in specificsidebarcomponents[i]
+                ?.sidebaroptions"
+              :key="index"
+            >
+              <a
+                :href="specificsidebarcomponents[i]?.sidebaroptionspath[i]"
+                class="sidenav__menu-url"
+                >{{ option }}</a
+              >
             </li>
-            <li><a href="shortcodes.html" class="sidenav__menu-url">Shortcodes</a></li>
           </ul>
         </li>
 
@@ -92,19 +137,44 @@ defineProps({
     </nav>
 
     <div class="socials sidenav__socials">
-      <a class="social social-facebook" href="#" target="_blank" aria-label="facebook">
+      <a
+        class="social social-facebook"
+        href="#"
+        target="_blank"
+        aria-label="facebook"
+      >
         <i class="ui-facebook"></i>
       </a>
-      <a class="social social-twitter" href="#" target="_blank" aria-label="twitter">
+      <a
+        class="social social-twitter"
+        href="#"
+        target="_blank"
+        aria-label="twitter"
+      >
         <i class="ui-twitter"></i>
       </a>
-      <a class="social social-google-plus" href="#" target="_blank" aria-label="google">
+      <a
+        class="social social-google-plus"
+        href="#"
+        target="_blank"
+        aria-label="google"
+      >
         <i class="ui-google"></i>
       </a>
-      <a class="social social-youtube" href="#" target="_blank" aria-label="youtube">
+      <a
+        class="social social-youtube"
+        href="#"
+        target="_blank"
+        aria-label="youtube"
+      >
         <i class="ui-youtube"></i>
       </a>
-      <a class="social social-instagram" href="#" target="_blank" aria-label="instagram">
+      <a
+        class="social social-instagram"
+        href="#"
+        target="_blank"
+        aria-label="instagram"
+      >
         <i class="ui-instagram"></i>
       </a>
     </div>
