@@ -1,5 +1,6 @@
 <script setup>
 import { defineEmits, defineProps, ref } from "vue";
+import SpecificPersonalSideBarDropDownComponent from "../GenericSideBarComponents/SpecificPersonalSideBarDropDownComponent.vue";
 defineEmits(["close-sidebar"]);
 defineProps({
   sidebarvalue: {
@@ -56,6 +57,34 @@ const specificsidebarcomponents = [
     sidebaroptionspath: ["#", "shortcodes.html"],
   },
 ];
+
+const singlePostData = [
+  {
+    data : 'Style 1',
+    path : 'single-post.html'
+  },
+  {
+    data : 'Style 2',
+    path : 'single-post-politics.html'
+  },
+  {
+    data : 'Style 3',
+    path : 'single-post-fashion.html'
+  },
+  {
+    data : 'Style 4',
+    path : 'single-post-games.html'
+  },
+  {
+    data : 'Style 5',
+    path : 'single-post-videos.html'
+  },
+  {
+    data : 'Style 6',
+    path : 'single-post-music.html'
+  },
+]
+
 const openedIndex = ref(null);
 const toggleInternalSideBarContent = (index) => {
   openedIndex.value = openedIndex.value === index ? "null" : index;
@@ -108,12 +137,17 @@ const toggleInternalSideBarContent = (index) => {
                 ?.sidebaroptions"
               :key="index"
             >
-              <a
-                :href="specificsidebarcomponents[i]?.sidebaroptionspath[i]"
+            <template v-if="option === 'Single Post'">
+              <SpecificPersonalSideBarDropDownComponent :singlePostData="singlePostData"/>
+            </template>
+              <a v-else
+                :href="specificsidebarcomponents[i]?.sidebaroptionspath[index]"
                 class="sidenav__menu-url"
                 >{{ option }}</a
               >
             </li>
+         
+            
           </ul>
         </li>
 
