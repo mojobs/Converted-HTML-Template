@@ -1,10 +1,5 @@
 <script setup>
-import '@/assets/css/bootstrap.min.css'
-import '@/assets/css/font-icons.css'
-import '@/assets/css/style.css'
-import '@/assets/img/favicon.ico'
-import '@/assets/img/apple-touch-icon-72x72.png'
-import '@/assets/img/apple-touch-icon-114x114.png'
+
 
 import HomeFeaturePostsComponent from "@/components/HomeViewComponents/HomeFeaturePostsComponent.vue";
 import HomeFooter from "@/components/HomeViewComponents/HomeFooter.vue";
@@ -16,13 +11,14 @@ import HomeViewTopBarComponent from "@/components/HomeViewComponents/HomeViewTop
 import BackToTopComponent from '@/components/BackToTopComponent.vue';
 import { ref } from "vue";
 
+// For sideBar Component
 const isSideBarClicked = ref(false);
 const showSideBarContentOverlay = () => {
   isSideBarClicked.value = !isSideBarClicked.value;
 };
 
-
 </script>
+
 
 <template>
   <HomeViewTopBarComponent />
@@ -39,6 +35,7 @@ const showSideBarContentOverlay = () => {
     @close-sidebar="showSideBarContentOverlay"
     :sidebarvalue="isSideBarClicked"
   />
+
 
   <HomeTrendingNowBar />
   <HomeFeaturePostsComponent/>

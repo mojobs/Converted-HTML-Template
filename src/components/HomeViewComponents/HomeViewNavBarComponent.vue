@@ -5,7 +5,12 @@
       <div class="container relative">
         <div class="flex-parent">
           <!-- Side Menu Button -->
-          <button @click="$emit('open-sidebar')" class="nav-icon-toggle" id="nav-icon-toggle" aria-label="Open side menu">
+          <button
+            @click="$emit('open-sidebar')"
+            class="nav-icon-toggle"
+            id="nav-icon-toggle"
+            aria-label="Open side menu"
+          >
             <span class="nav-icon-toggle__box">
               <span class="nav-icon-toggle__inner"></span>
             </span>
@@ -16,7 +21,10 @@
             <img
               class="logo__img"
               src="@/assets/img/logo_default.png"
-              srcset="@/assets/img/logo_default.png 1x, @/assets/img/logo_default@2x.png 2x"
+              srcset="
+                @/assets/img/logo_default.png    1x,
+                @/assets/img/logo_default@2x.png 2x
+              "
               alt="logo"
             />
           </a>
@@ -62,7 +70,8 @@
                             <div class="entry__body">
                               <h2 class="entry__title">
                                 <a href="single-post.html"
-                                  >Follow These Smartphone Habits of Successful Entrepreneurs</a
+                                  >Follow These Smartphone Habits of Successful
+                                  Entrepreneurs</a
                                 >
                               </h2>
                             </div>
@@ -89,8 +98,8 @@
                             <div class="entry__body">
                               <h2 class="entry__title">
                                 <a href="single-post.html"
-                                  >3 Things You Can Do to Get Your Customers Talking About Your
-                                  Business</a
+                                  >3 Things You Can Do to Get Your Customers
+                                  Talking About Your Business</a
                                 >
                               </h2>
                             </div>
@@ -117,8 +126,8 @@
                             <div class="entry__body">
                               <h2 class="entry__title">
                                 <a href="single-post.html"
-                                  >Lose These 12 Bad Habits If You're Serious About Becoming a
-                                  Millionaire</a
+                                  >Lose These 12 Bad Habits If You're Serious
+                                  About Becoming a Millionaire</a
                                 >
                               </h2>
                             </div>
@@ -145,8 +154,8 @@
                             <div class="entry__body">
                               <h2 class="entry__title">
                                 <a href="single-post.html"
-                                  >10 Horrible Habits You're Doing Right Now That Are Draining Your
-                                  Energy</a
+                                  >10 Horrible Habits You're Doing Right Now
+                                  That Are Draining Your Energy</a
                                 >
                               </h2>
                             </div>
@@ -201,12 +210,29 @@
             <!-- Search -->
             <div class="nav__right-item nav__search">
               <a href="#" class="nav__search-trigger" id="nav__search-trigger">
-                <i class="ui-search nav__search-trigger-icon"></i>
+                <i  @click="toggleSearchBar"
+                  :class="{
+                    'ui-search nav__search-trigger-icon ui-close':
+                      isSearchBarOpened,
+                    'ui-search nav__search-trigger-icon': !isSearchBarOpened,
+                  }"
+                ></i>
               </a>
-              <div class="nav__search-box" id="nav__search-box">
+              <div
+                class="nav__search-box"
+                id="nav__search-box"
+                :style="{ display: isSearchBarOpened ? 'block' : 'none' }"
+              >
                 <form class="nav__search-form">
-                  <input type="text" placeholder="Search an article" class="nav__search-input" />
-                  <button type="submit" class="search-button btn btn-lg btn-color btn-button">
+                  <input
+                    type="text"
+                    placeholder="Search an article"
+                    class="nav__search-input"
+                  />
+                  <button
+                    type="submit"
+                    class="search-button btn btn-lg btn-color btn-button"
+                  >
                     <i class="ui-search nav__search-icon"></i>
                   </button>
                 </form>
@@ -223,12 +249,17 @@
   <!-- end navigation -->
 </template>
 
-
 <script setup>
-import {defineEmits } from 'vue';
-import { RouterLink } from 'vue-router';
-defineEmits(['open-sidebar'])
+import { defineEmits, ref } from "vue";
+import { RouterLink } from "vue-router";
+
+defineEmits(["open-sidebar"]);
 
 
-
+// For SearchBarComponent
+const isSearchBarOpened = ref(false);
+const toggleSearchBar = () => {
+  isSearchBarOpened.value = !isSearchBarOpened.value;
+  console.log("Search Bar should open");
+};
 </script>

@@ -1,6 +1,6 @@
 <script setup>
 import { defineEmits, defineProps, ref } from "vue";
-import SpecificPersonalSideBarDropDownComponent from "../GenericSideBarComponents/SpecificPersonalSideBarDropDownComponent.vue";
+import SpecificPersonalSideBarDropDownComponent from "../GenericComponents/SpecificPersonalSideBarDropDownComponent.vue";
 defineEmits(["close-sidebar"]);
 defineProps({
   sidebarvalue: {
@@ -95,7 +95,7 @@ const toggleInternalSideBarContent = (index) => {
   <header
     :class="{
       'sidenav sidenav--is-open': sidebarvalue,
-      sidenav: !sidebarvalue,
+      'sidenav': !sidebarvalue,
     }"
     id="sidenav"
   >
