@@ -1,5 +1,4 @@
 import '@/assets/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js'
 
 import '@/assets/css/style.css'
 import '@/assets/sass/style.scss'

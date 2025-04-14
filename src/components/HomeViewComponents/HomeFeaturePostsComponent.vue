@@ -1,10 +1,14 @@
 <script setup>
 import HomeFeatureSmallPosts from './HomeFeatureSmallPosts.vue';
 
+import heroPost1 from "@/assets/img/content/hero/hero_post_1.jpg";
+import heroPost2 from "@/assets/img/content/hero/hero_post_2.jpg";
+import heroPost3 from "@/assets/img/content/hero/hero_post_3.jpg";
+
 const dataset = [
   {
     id: '1',
-    backgroundImage: "@/assets/img/content/hero/hero_post_1.jpg",
+    backgroundImage: heroPost1,
     imageSource: "@/assets/img/content/hero/hero_post_1.jpg",
     text: "3 Founders With Booming Businesses Share Stories About Their Difficult Early",
     category: 'World',
@@ -12,7 +16,7 @@ const dataset = [
   },
   {
     id: '2',
-    backgroundImage: "@/assets/img/content/hero/hero_post_2.jpg",
+    backgroundImage: heroPost2,
     imageSource: "@/assets/img/content/hero/hero_post_2.jpg",
     text: "3 Things You Can Do to Get Your Customers Talking About Your Business",
     category: 'Fashion',
@@ -20,7 +24,7 @@ const dataset = [
   },
   {
     id: '3',
-    backgroundImage: "@/assets/img/content/hero/hero_post_3.jpg",
+    backgroundImage: heroPost3,
     imageSource: "@/assets/img/content/hero/hero_post_3.jpg",
     text: "These Are the 20 Best Places to Work in 2018",
     category: 'Business',
