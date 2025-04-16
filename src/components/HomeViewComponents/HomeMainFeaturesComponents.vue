@@ -13,6 +13,19 @@ import holdingHands from "@/assets/img/content/thumb/thumb_post_2.jpg";
 import crypto from "@/assets/img/content/thumb/thumb_post_3.jpg";
 import investment from "@/assets/img/content/thumb/thumb_post_4.jpg";
 
+// imports for the Video data images
+import office from '@/assets/img/content/grid/grid_post_5.jpg'
+import windmill from '@/assets/img/content/grid/grid_post_6.jpg'
+
+//Imports for the Worldwide background images
+import business from '@/assets/img/content/list/list_post_1.jpg'
+import fashion from '@/assets/img/content/list/list_post_2.jpg'
+import mining from '@/assets/img/content/list/list_post_3.jpg'
+import world from '@/assets/img/content/list/list_post_4.jpg'
+import investments from '@/assets/img/content/list/list_post_5.jpg'
+import technology from '@/assets/img/content/list/list_post_6.jpg'
+
+
 const categoriesData = [
   {
     header: "Technology",
@@ -60,7 +73,69 @@ const categoriesData = [
   },
 ];
 
+const videoData = [
+  {
+    text : 'What Days and Hours are PH Online Shoppers Most Likely to Buy?',
+    videoImage : office
+  },
+  {
+    text : 'Want to work at Tesla? This program guarantees you a job after graduation',
+    videoImage : windmill
+  }
+];
+
+const worldwideData = [
+  {
+    text : 'These Are the 20 Best Places to Work in 2018',
+    image : business,
+    type : 'BUSINESS',
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue' 
+  },
+  {
+    text : 'This Co-Working Space is a One-Stop Shop',
+    image : fashion,
+    type : 'FASHION',
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple' 
+  },
+  {
+    text : 'This 6-Year-Old Kid Reportedly Earned US$11 Million on YouTube',
+    image : mining,
+    type : 'MINING',
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--orange' 
+  },
+  {
+    text : 'Rating Agency Breaks with Financial Community',
+    image : world,
+    type : "WORLD",
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet' 
+  },
+  {
+    text : 'Decentralized Exchanges (DEX) – What Are They?',
+    image : investments,
+    type : "INVESTMENT",
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--red' 
+  },
+  {
+    text : 'Decentralized Exchanges (DEX) – What Are They?',
+    image : technology,
+    type : "TECHNOLOGY",
+    class :'entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--cyan' 
+  }
+];
+
+const recommendedData = [
+  {
+    text : 'UN’s WFP Building Up Blockchain-Based Payments System',
+    image: crypto
+  },
+  {
+    text : '4 credit card tips to make business travel easier',
+    image: holdingHands
+  }
+]
+
 import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue";
+import { type } from "jquery";
 </script>
 
 <template>
@@ -398,13 +473,13 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
         <a href="#" class="all-posts-url">View All</a>
       </div>
       <div class="row card-row">
-        <div class="col-md-6">
+        <div class="col-md-6" v-for="data in videoData">
           <article class="entry card">
             <div class="entry__img-holder card__img-holder">
               <a href="single-post.html">
                 <div class="thumb-container thumb-65">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_5.jpg"
+                    :data-src="data.videoImage"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
@@ -418,49 +493,7 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
               <div class="entry__header">
                 <h2 class="entry__title">
                   <a href="single-post.html"
-                    >What Days and Hours are PH Online Shoppers Most Likely to
-                    Buy?</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6">
-          <article class="entry card">
-            <div class="entry__img-holder card__img-holder">
-              <a href="single-post.html">
-                <div class="thumb-container thumb-65">
-                  <img
-                    data-src="@/assets/img/content/grid/grid_post_6.jpg"
-                    src="@/assets/img/empty.png"
-                    class="entry__img lazyload"
-                    alt=""
-                  />
-                </div>
-              </a>
-              <div class="entry__play-time"><i class="ui-play"></i>3:21</div>
-            </div>
-
-            <div class="entry__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >Want to work at Tesla? This program guarantees you a job
-                    after graduation</a
+                    >{{ data.text }}</a
                   >
                 </h2>
                 <ul class="entry__meta">
@@ -495,21 +528,21 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
             <a href="#" class="all-posts-url">View All</a>
           </div>
 
-          <article class="entry card post-list">
+          <article class="entry card post-list" v-for="data in worldwideData" :key="data.type">
             <div
               class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_1.jpg)"
+              :style="{backgroundImage: `url('${data.image}')`}"
             >
               <a href="single-post.html" class="thumb-url"></a>
               <img
-                src="@/assets/img/content/list/list_post_1.jpg"
+                :src="data.image"
                 alt=""
                 class="entry__img d-none"
               />
               <a
                 href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--blue"
-                >Business</a
+                :class="data.class"
+                >{{ data.type }}</a
               >
             </div>
 
@@ -517,218 +550,7 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
               <div class="entry__header">
                 <h2 class="entry__title">
                   <a href="single-post.html"
-                    >These Are the 20 Best Places to Work in 2018</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="entry card post-list">
-            <div
-              class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_2.jpg)"
-            >
-              <a href="single-post.html" class="thumb-url"></a>
-              <img
-                src="@/assets/img/content/list/list_post_2.jpg"
-                alt=""
-                class="entry__img d-none"
-              />
-              <a
-                href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--purple"
-                >Fashion</a
-              >
-            </div>
-
-            <div class="entry__body post-list__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >This Co-Working Space is a One-Stop Shop</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="entry card post-list">
-            <div
-              class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_3.jpg)"
-            >
-              <a href="single-post.html" class="thumb-url"></a>
-              <img
-                src="@/assets/img/content/list/list_post_3.jpg"
-                alt=""
-                class="entry__img d-none"
-              />
-              <a
-                href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--orange"
-                >Mining</a
-              >
-            </div>
-
-            <div class="entry__body post-list__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >This 6-Year-Old Kid Reportedly Earned US$11 Million on
-                    YouTube</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="entry card post-list">
-            <div
-              class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_4.jpg)"
-            >
-              <a href="single-post.html" class="thumb-url"></a>
-              <img
-                src="@/assets/img/content/list/list_post_4.jpg"
-                alt=""
-                class="entry__img d-none"
-              />
-              <a
-                href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--violet"
-                >World</a
-              >
-            </div>
-
-            <div class="entry__body post-list__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >Rating Agency Breaks with Financial Community
-                  </a>
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="entry card post-list">
-            <div
-              class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_5.jpg)"
-            >
-              <a href="single-post.html" class="thumb-url"></a>
-              <img
-                src="@/assets/img/content/list/list_post_5.jpg"
-                alt=""
-                class="entry__img d-none"
-              />
-              <a
-                href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--red"
-                >Investment</a
-              >
-            </div>
-
-            <div class="entry__body post-list__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >Decentralized Exchanges (DEX) – What Are They?</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-              </div>
-              <div class="entry__excerpt">
-                <p>
-                  iPrice Group report offers insights on daily e-commerce
-                  activity in the ...
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <article class="entry card post-list">
-            <div
-              class="entry__img-holder post-list__img-holder card__img-holder"
-              style="background-image: url(img/content/list/list_post_6.jpg)"
-            >
-              <a href="single-post.html" class="thumb-url"></a>
-              <img
-                src="@/assets/img/content/list/list_post_6.jpg"
-                alt=""
-                class="entry__img d-none"
-              />
-              <a
-                href="categories.html"
-                class="entry__meta-category entry__meta-category--label entry__meta-category--align-in-corner entry__meta-category--cyan"
-                >Technology</a
-              >
-            </div>
-
-            <div class="entry__body post-list__body card__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >Decentralized Exchanges (DEX) – What Are They?</a
+                    >{{ data.text }}</a
                   >
                 </h2>
                 <ul class="entry__meta">
@@ -816,13 +638,13 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
         <!-- Widget Recommended (Rating) -->
         <aside class="widget widget-rating-posts">
           <h4 class="widget-title">Recommended</h4>
-          <article class="entry">
+          <article class="entry" v-for="data in recommendedData">
             <div class="entry__img-holder">
               <a href="single-post.html">
                 <div class="thumb-container thumb-60">
                   <img
-                    data-src="@/assets/img/content/review/review_post_1.jpg"
-                    src="@/assets/img/empty.png"
+                    :data-src="data.image"
+                    :src="data.image"
                     class="entry__img lazyload"
                     alt=""
                   />
@@ -834,51 +656,7 @@ import OwlCarouselComponent from "../GenericComponents/OwlCarouselComponent.vue"
               <div class="entry__header">
                 <h2 class="entry__title">
                   <a href="single-post.html"
-                    >UN’s WFP Building Up Blockchain-Based Payments System</a
-                  >
-                </h2>
-                <ul class="entry__meta">
-                  <li class="entry__meta-author">
-                    <span>by</span>
-                    <a href="#">DeoThemes</a>
-                  </li>
-                  <li class="entry__meta-date">Jan 21, 2018</li>
-                </ul>
-                <ul class="entry__meta">
-                  <li class="entry__meta-rating">
-                    <i class="ui-star"></i
-                    ><!--
-                --><i class="ui-star"></i
-                    ><!--
-                --><i class="ui-star"></i
-                    ><!--
-                --><i class="ui-star"></i
-                    ><!--
-                --><i class="ui-star-empty"></i>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </article>
-          <article class="entry">
-            <div class="entry__img-holder">
-              <a href="single-post.html">
-                <div class="thumb-container thumb-60">
-                  <img
-                    data-src="@/assets/img/content/review/review_post_2.jpg"
-                    src="@/assets/img/empty.png"
-                    class="entry__img lazyload"
-                    alt=""
-                  />
-                </div>
-              </a>
-            </div>
-
-            <div class="entry__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post.html"
-                    >4 credit card tips to make business travel easier</a
+                    >{{ data.text }}</a
                   >
                 </h2>
                 <ul class="entry__meta">

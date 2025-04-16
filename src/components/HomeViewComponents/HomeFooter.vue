@@ -1,5 +1,19 @@
 <script setup>
 import HomeCopyrightComponent from "./HomeCopyrightComponent.vue";
+
+import suitman from "@/assets/img/content/grid/grid_post_1.jpg";
+import laptop from "@/assets/img/content/post_small/post_small_2.jpg";
+
+const popularPosts = [
+  {
+    text : 'Follow These Smartphone Habits of Successful Entrepreneurs',
+    image : suitman
+  },
+  {
+    text : 'Lose These 12 Bad Habits If You\'re Serious About Becoming a Millionaire',
+    image : laptop
+  }
+]
 </script>
 
 <template>
@@ -68,13 +82,14 @@ import HomeCopyrightComponent from "./HomeCopyrightComponent.vue";
             <aside class="widget widget-popular-posts">
               <h4 class="widget-title">Popular Posts</h4>
               <ul class="post-list-small">
-                <li class="post-list-small__item">
+                <li class="post-list-small__item" v-for="data in popularPosts">
+
                   <article class="post-list-small__entry clearfix">
                     <div class="post-list-small__img-holder">
                       <div class="thumb-container thumb-100">
                         <a href="single-post.html">
                           <img
-                            data-src="@/assets/img/content/post_small/post_small_1.jpg"
+                            :data-src="data.image"
                             src="@/assets/img/empty.png"
                             alt=""
                             class="post-list-small__img--rounded lazyload"
@@ -85,39 +100,7 @@ import HomeCopyrightComponent from "./HomeCopyrightComponent.vue";
                     <div class="post-list-small__body">
                       <h3 class="post-list-small__entry-title">
                         <a href="single-post.html"
-                          >Follow These Smartphone Habits of Successful
-                          Entrepreneurs</a
-                        >
-                      </h3>
-                      <ul class="entry__meta">
-                        <li class="entry__meta-author">
-                          <span>by</span>
-                          <a href="#">DeoThemes</a>
-                        </li>
-                        <li class="entry__meta-date">Jan 21, 2018</li>
-                      </ul>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__img-holder">
-                      <div class="thumb-container thumb-100">
-                        <a href="single-post.html">
-                          <img
-                            data-src="@/assets/img/content/post_small/post_small_2.jpg"
-                            src="@/assets/img/empty.png"
-                            alt=""
-                            class="post-list-small__img--rounded lazyload"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post.html"
-                          >Lose These 12 Bad Habits If You're Serious About
-                          Becoming a Millionaire</a
+                          >{{ data.text }}</a
                         >
                       </h3>
                       <ul class="entry__meta">
