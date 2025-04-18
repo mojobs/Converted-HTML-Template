@@ -140,10 +140,14 @@ const toggleInternalSideBarContent = (index) => {
                   ?.sidebaroptions"
                 :key="index"
               >
+              
                 <template v-if="option === 'Single Post'">
-                  <SpecificPersonalSideBarDropDownComponent
-                    :singlePostData="singlePostData"
-                  />
+                
+                    <SpecificPersonalSideBarDropDownComponent
+                      :singlePostData="singlePostData"
+                    />
+                  
+               
                 </template>
                 <a
                   v-else
@@ -244,5 +248,9 @@ const toggleInternalSideBarContent = (index) => {
 
   transition: all 0.5s ease-out;
 }
+
+
+
+
 
 </style>

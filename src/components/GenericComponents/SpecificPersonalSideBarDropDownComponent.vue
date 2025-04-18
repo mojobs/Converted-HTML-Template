@@ -8,7 +8,7 @@ defineProps(
           }
      }
 )
-const isSinglePostToggled = ref(null);
+const isSinglePostToggled = ref(false);
 const toggleSinglePost = () =>{
      isSinglePostToggled.value = !isSinglePostToggled.value
 }
@@ -24,10 +24,32 @@ const toggleSinglePost = () =>{
     >
       <i class="ui-arrow-down"></i>
     </button>
-    <transition-group name="dropdown" tag="ul" :class="{'sidenav__menu-dropdown': true, 'show' : isSinglePostToggled}" :style="{ display: isSinglePostToggled ? 'block' : 'none' }">
+    <transition name="singlepost">
+      <ul class='sidenav__menu-dropdown' v-if="isSinglePostToggled" :style="{ display: isSinglePostToggled ? 'block' : 'none' }">
       <li v-for="data in singlePostData"><a :href="data.path" class="sidenav__menu-url">{{ data.data }}</a></li>
-    </transition-group>
+    </ul>
+    </transition>
  
   </li>
 </template>
+<style scoped>
+.singlepost-enter-from, .singlepost-leave-to {
+  transform: translateY(-10px);
+  overflow: hidden;
+  max-height: 0;
+}
+.singlepost-enter-to, .singlepost-leave-from {
+
+  transform: translateY(0);
+  overflow: hidden;
+  max-height: 500px;
+}
+.singlepost-enter-active{
+  transition: all 0.5s ease-in;
+}
+.singlepost-leave-active{
+  transition: all 0.5s ease-out;
+}
+
+</style>
 
