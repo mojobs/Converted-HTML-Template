@@ -60,34 +60,34 @@ const specificsidebarcomponents = [
 
 const singlePostData = [
   {
-    data : 'Style 1',
-    path : 'single-post.html'
+    data: "Style 1",
+    path: "single-post.html",
   },
   {
-    data : 'Style 2',
-    path : 'single-post-politics.html'
+    data: "Style 2",
+    path: "single-post-politics.html",
   },
   {
-    data : 'Style 3',
-    path : 'single-post-fashion.html'
+    data: "Style 3",
+    path: "single-post-fashion.html",
   },
   {
-    data : 'Style 4',
-    path : 'single-post-games.html'
+    data: "Style 4",
+    path: "single-post-games.html",
   },
   {
-    data : 'Style 5',
-    path : 'single-post-videos.html'
+    data: "Style 5",
+    path: "single-post-videos.html",
   },
   {
-    data : 'Style 6',
-    path : 'single-post-music.html'
+    data: "Style 6",
+    path: "single-post-music.html",
   },
-]
+];
 
 const openedIndex = ref(null);
 const toggleInternalSideBarContent = (index) => {
-  openedIndex.value = openedIndex.value === index ? "null" : index;
+  openedIndex.value = openedIndex.value === index ? null : index;
 };
 </script>
 
@@ -95,7 +95,7 @@ const toggleInternalSideBarContent = (index) => {
   <header
     :class="{
       'sidenav sidenav--is-open': sidebarvalue,
-      'sidenav': !sidebarvalue,
+      sidenav: !sidebarvalue,
     }"
     id="sidenav"
   >
@@ -114,42 +114,49 @@ const toggleInternalSideBarContent = (index) => {
     <!-- Nav -->
     <nav class="sidenav__menu-container">
       <ul class="sidenav__menu" role="menubar">
-        <li
-          v-for="(data, i) in sideMenuData"
-          :key="data.datamenu"
-          :class="{ 'sidenav__menu--is-open': openedIndex === i }"
-        >
-          <a href="#" class="sidenav__menu-url">{{ data.datamenu }}</a>
-          <button
-            @click="toggleInternalSideBarContent(i)"
-            class="sidenav__menu-toggle"
-            aria-haspopup="true"
-            aria-label="Open dropdown"
+          <li
+            v-for="(data, i) in sideMenuData"
+            :key="data.datamenu"
+            :class="{ 'sidenav__menu--is-open': openedIndex === i }"
           >
-            <i class="ui-arrow-down"></i>
-          </button>
-          <ul
-            :class="{ 'sidenav__menu-dropdown': true, 'show': openedIndex === i }"
-            :style="{ display: openedIndex === i ? 'block' : 'none' }"
-          >
-            <li
-              v-for="(option, index) in specificsidebarcomponents[i]
-                ?.sidebaroptions"
-              :key="index"
+            <a href="#" class="sidenav__menu-url">{{ data.datamenu }}</a>
+            <button
+              @click="toggleInternalSideBarContent(i)"
+              class="sidenav__menu-toggle"
+              aria-haspopup="true"
+              aria-label="Open dropdown"
             >
-            <template v-if="option === 'Single Post'">
-              <SpecificPersonalSideBarDropDownComponent :singlePostData="singlePostData"/>
-            </template>
-              <a v-else
-                :href="specificsidebarcomponents[i]?.sidebaroptionspath[index]"
-                class="sidenav__menu-url"
-                >{{ option }}</a
+              <i class="ui-arrow-down"></i>
+            </button>
+            <transition name="dropdown">
+            <ul
+              class=
+                'sidenav__menu-dropdown'
+              v-if="openedIndex === i" 
+              :style="{display :openedIndex == i ? 'block' : 'none'}"
+            >
+              <li
+                v-for="(option, index) in specificsidebarcomponents[i]
+                  ?.sidebaroptions"
+                :key="index"
               >
-            </li>
-         
-            
-          </ul>
-        </li>
+                <template v-if="option === 'Single Post'">
+                  <SpecificPersonalSideBarDropDownComponent
+                    :singlePostData="singlePostData"
+                  />
+                </template>
+                <a
+                  v-else
+                  :href="
+                    specificsidebarcomponents[i]?.sidebaroptionspath[index]
+                  "
+                  class="sidenav__menu-url"
+                  >{{ option }}</a
+                >
+              </li>
+            </ul>
+          </transition>
+          </li>
 
         <!-- Categories -->
         <li>
@@ -215,3 +222,27 @@ const toggleInternalSideBarContent = (index) => {
   </header>
   <!-- end sidenav -->
 </template>
+
+<style scoped>
+.dropdown-enter-from,
+.dropdown-leave-to {
+  transform: translateY(-10px);
+  max-height: 0;
+  overflow: hidden;
+}
+.dropdown-enter-to,
+.dropdown-leave-from {
+
+  transform: translateY(0);
+  max-height: 500px; /* or however tall the dropdown could be */
+  overflow: hidden;
+}
+.dropdown-enter-active {
+  transition: all 0.5s ease-in;
+}
+.dropdown-leave-active {
+
+  transition: all 0.5s ease-out;
+}
+
+</style>

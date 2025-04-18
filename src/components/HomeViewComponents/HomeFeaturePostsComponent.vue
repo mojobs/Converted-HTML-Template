@@ -72,7 +72,7 @@ const dataset = [
                 <ul class="entry__meta">
                   <li class="entry__meta-author">
                     <span>by</span>
-                    <a href="#">DeoThemes</a>
+                    <a href="#"> DeoThemes</a>
                   </li>
                   <li class="entry__meta-date">Jan 21, 2018</li>
                 </ul>

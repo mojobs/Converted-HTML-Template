@@ -24,8 +24,10 @@ const toggleSinglePost = () =>{
     >
       <i class="ui-arrow-down"></i>
     </button>
-    <ul :class="{'sidenav__menu-dropdown': true, 'show' : isSinglePostToggled}" :style="{ display: isSinglePostToggled ? 'block' : 'none' }">
+    <transition-group name="dropdown" tag="ul" :class="{'sidenav__menu-dropdown': true, 'show' : isSinglePostToggled}" :style="{ display: isSinglePostToggled ? 'block' : 'none' }">
       <li v-for="data in singlePostData"><a :href="data.path" class="sidenav__menu-url">{{ data.data }}</a></li>
-    </ul>
+    </transition-group>
+ 
   </li>
 </template>
+
