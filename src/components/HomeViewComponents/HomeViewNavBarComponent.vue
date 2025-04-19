@@ -1,3 +1,37 @@
+<style scoped>
+#nav-box {
+  width: 1218px; 
+  left: -236.013px;
+}
+/* For screens between 1024px and 1284px */
+@media (max-width: 1284px) and (min-width: 1024px) {
+  #nav-box {
+    width: 1000px;
+    left: -180px;
+  
+  }
+}
+
+/* For tablets (between 768px and 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  #nav-box{
+    width: 700px;
+    left: -100px;
+
+  }
+}
+
+/* For mobile (less than 768px) */
+@media (max-width: 767px) {
+ #nav-box{
+    width: 100%;
+    left: 0;
+
+  }
+}
+
+</style>
+
 <template>
   <!-- Navigation -->
   <header class="nav">
@@ -46,7 +80,7 @@
 
               <li class="nav__dropdown">
                 <a href="#">Posts</a>
-                <ul class="nav__dropdown-menu nav__megamenu">
+                <ul class="nav__dropdown-menu nav__megamenu" id="nav-box">
                   <li>
                     <div class="nav__megamenu-wrap">
                       <div class="row">
