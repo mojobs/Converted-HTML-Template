@@ -1,5 +1,28 @@
+<style scoped>
+.fade-enter-from{
+  opacity: 0;
+transform: translateY(10px);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
+transform: translateY(0);
+}
+.fade-enter-active{
+transition: all 0.35s ease;
+}
+.fade-leave-active{
+  transition: all 0.35s ease;
+}
+</style>
+
+
+
 <script setup>
-import { computed, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 
@@ -24,15 +47,42 @@ const data = [
 ];
 const currentIndex = ref(0);
 
+let interval = null;
+
 const previous = () => {
     currentIndex.value = (currentIndex.value - 1 + data.length) % data.length;
+    resetAutoCycle();
 };
 
 const next = () => {
     currentIndex.value = (currentIndex.value + 1) % data.length;
+    resetAutoCycle();
 };
 
 const currentItem = computed(() => data[currentIndex.value])
+
+const startAutoCycle = () =>{
+  interval = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % data.length;
+  }, 3500);
+};
+
+const stopAutoCycle = () =>{
+  clearInterval(interval)
+}
+
+const resetAutoCycle = () => {
+  stopAutoCycle();
+  startAutoCycle();
+};
+
+onMounted (() => {
+  startAutoCycle();
+})
+
+onUnmounted (() => {
+  stopAutoCycle();
+})
 
 </script>
 
@@ -48,12 +98,15 @@ const currentItem = computed(() => data[currentIndex.value])
       </span>
       <div class="newsticker">
         <ul class="newsticker__list">
-          <li class="newsticker__item">
+            <transition name="fade" mode="out-in">
+          <li class="newsticker__item" :key="currentItem.id">
             <a :href="currentItem.url" class="newsticker__item-url">{{
               currentItem.description
             }}</a>
           </li>
+        </transition>
         </ul>
+  
       </div>
       <div class="newsticker-buttons">
         <button
