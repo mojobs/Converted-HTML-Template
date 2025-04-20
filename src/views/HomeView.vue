@@ -4,9 +4,9 @@
 import HomeFeaturePostsComponent from "@/components/HomeViewComponents/HomeFeaturePostsComponent.vue";
 import HomeFooter from "@/components/HomeViewComponents/HomeFooter.vue";
 import HomeMainFeaturesComponents from "@/components/HomeViewComponents/HomeMainFeaturesComponents.vue";
-import HomeSideBarComponent from "@/components/HomeViewComponents/HomeSideBarComponent.vue";
-import HomeTrendingNowBar from "@/components/HomeViewComponents/HomeTrendingNowBar.vue";
-import HomeViewNavBarComponent from "@/components/HomeViewComponents/HomeViewNavBarComponent.vue";
+import HomeSideBarComponent from "@/components/GenericComponents/GeneralSideBarComponent.vue";
+import HomeTrendingNowBar from "@/components/GenericComponents/GeneralTrendingNowBar.vue";
+import HomeViewNavBarComponent from "@/components/GenericComponents/GeneralNavBarComponent.vue";
 import HomeViewTopBarComponent from "@/components/HomeViewComponents/HomeViewTopBarComponent.vue";
 import BackToTopComponent from '@/components/BackToTopComponent.vue';
 import { ref } from "vue";

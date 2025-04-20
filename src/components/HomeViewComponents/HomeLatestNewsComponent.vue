@@ -5,7 +5,7 @@ import travel from '@/assets/img/content/grid/grid_post_2.jpg';
 import laptop from '@/assets/img/content/grid/grid_post_3.jpg';
 import jogging from '@/assets/img/content/grid/grid_post_4.jpg';
 const activeTab = ref(1);
-const setActiveTab = (index = 5) => {
+const setActiveTab = (index) => {
   activeTab.value = index;
   console.log(`Active tab : ${activeTab.value}`)
 }
@@ -55,8 +55,11 @@ const tabData = [
 
       <!-- tab content -->
       <div class="tabs__content tabs__content-trigger tab-post__tabs-content">
+        <transition-group name="slide">
         
-        <div class="tabs__content-pane" id="tab-all" v-show="activeTab == 1" :class="{'tabs__content-pane--active' : activeTab == 1}">
+        
+        
+        <div class="tabs__content-pane" id="tab-all" v-show="activeTab == 1" :class="{'tabs__content-pane--active' : activeTab == 1}" key="tab-1">
           <div class="row card-row">
             <div class="col-md-6">
               <article class="entry card">
@@ -193,7 +196,7 @@ const tabData = [
           </div>
         </div> <!-- end pane 1 -->
 
-        <div class="tabs__content-pane" id="tab-world" v-show="activeTab == 2" :class="{'tabs__content-pane--active' : activeTab == 2}" >
+        <div class="tabs__content-pane" id="tab-world" v-show="activeTab == 2" :class="{'tabs__content-pane--active' : activeTab == 2}" key="tab-2" >
           <div class="row card-row">
             <div class="col-md-6">
               <article class="entry card">
@@ -330,7 +333,7 @@ const tabData = [
           </div>
         </div> <!-- end pane 2 -->
 
-        <div class="tabs__content-pane" id="tab-lifestyle" v-show="activeTab == 3" :class="{'tabs__content-pane--active' : activeTab == 3}">
+        <div class="tabs__content-pane" id="tab-lifestyle" v-show="activeTab == 3" :class="{'tabs__content-pane--active' : activeTab == 3}" key="tab-3">
           <div class="row card-row">
             <div class="col-md-6">
               <article class="entry card">
@@ -467,7 +470,7 @@ const tabData = [
           </div>
         </div> <!-- end pane 3 -->
 
-        <div class="tabs__content-pane" id="tab-business" v-show="activeTab == 4" :class="{'tabs__content-pane--active' : activeTab == 4}">
+        <div class="tabs__content-pane" id="tab-business" v-show="activeTab == 4" :class="{'tabs__content-pane--active' : activeTab == 4}" key="tab-4">
           <div class="row card-row">
             <div class="col-md-6">
               <article class="entry card">
@@ -604,7 +607,7 @@ const tabData = [
           </div>
         </div> <!-- end pane 4 -->
 
-        <div class="tabs__content-pane" id="tab-fashion" v-show="activeTab == 5" :class="{'tabs__content-pane--active' : activeTab == 5}">
+        <div class="tabs__content-pane" id="tab-fashion" v-show="activeTab == 5" :class="{'tabs__content-pane--active' : activeTab == 5}" key="tab-5">
           <div class="row card-row">
             <div class="col-md-6">
               <article class="entry card">
@@ -740,6 +743,7 @@ const tabData = [
             </div>
           </div>
         </div> <!-- end pane 5 -->
+      </transition-group>
 
 
         
@@ -747,3 +751,27 @@ const tabData = [
       </div> <!-- end tab content -->            
     </section> <!-- end latest news -->
 </template>
+
+<style scoped>
+.tabs__content{
+  position: relative;
+  min-height: 1000px;
+}
+
+.tabs__content > div {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.slide-enter-from{
+  opacity: 0;
+
+}
+.slide-leave-to{
+  opacity: 0;
+}
+.slide-enter-active, .slide-leave-active{
+  transition: all 0.3s ease;
+}
+</style>

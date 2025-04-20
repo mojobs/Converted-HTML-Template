@@ -9,12 +9,14 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta : {bodyClass : 'bg-light style-default style-rounded'}
      
     },
     {
       path: '/politics',
       name: 'politics',
       component: PoliticsView,
+      meta : {bodyClass : 'home style-politics'}
       
     },
   ],

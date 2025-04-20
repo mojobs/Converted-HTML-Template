@@ -3,7 +3,7 @@ import HomeCopyrightComponent from '../HomeViewComponents/HomeCopyrightComponent
 
 </script>
 
-<style  scoped src="@/assets/css/colors/red.css"></style>
+
 <template>
 
        <!-- Footer -->

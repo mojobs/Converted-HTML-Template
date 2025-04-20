@@ -34,7 +34,7 @@
 
 <template>
   <!-- Navigation -->
-  <header class="nav">
+  <header :class="{'nav' :true, 'nav--1' : $route.path === '/politics' }">
     <div class="nav__holder nav--sticky">
       <div class="container relative">
         <div class="flex-parent">
@@ -51,7 +51,7 @@
           </button>
 
           <!-- Logo -->
-          <a href="index.html" class="logo">
+          <a href="index.html" class="logo" v-show="$route.path=='/'">
             <img
               class="logo__img"
               src="@/assets/img/logo_default.png"
@@ -286,6 +286,8 @@
 <script setup>
 import { defineEmits, ref } from "vue";
 import { RouterLink } from "vue-router";
+import { useRoute } from "vue-router";
+const route = useRoute();
 
 defineEmits(["open-sidebar"]);
 

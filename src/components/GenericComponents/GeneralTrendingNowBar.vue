@@ -8,7 +8,7 @@ transform: translateY(10px);
   transform: translateY(-10px);
 }
 .fade-enter-to, .fade-leave-from {
-  opacity: 1;
+opacity: 1;
 transform: translateY(0);
 }
 .fade-enter-active{
@@ -89,7 +89,7 @@ onUnmounted (() => {
 <template>
   <!-- Trending Now -->
   <div class="container">
-    <div :class="{'trending-now': $route.path === '/', 'trending-now--1': $route.path === '/politics' }">
+    <div :class="{'trending-now':true , 'trending-now--1': $route.path === '/politics' }">
       <span class="trending-now__label">
         <i class="ui-flash"></i>
         <span class="trending-now__text d-lg-inline-block d-none"

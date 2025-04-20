@@ -1,4 +1,4 @@
-<style  scoped src="@/assets/css/colors/red.css"></style>
+
 
 <template>
   <!-- Header -->
