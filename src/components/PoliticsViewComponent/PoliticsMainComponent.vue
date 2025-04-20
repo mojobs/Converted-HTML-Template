@@ -1,7 +1,106 @@
+<style>
+  .move-enter-from{
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  .move-leave-to{
+    transform: translateX(-50px);
+    opacity: 1;
+  }
+  .move-leave-active, .move-enter-active{
+transition: all 0.3s ease;
+  }
+</style>
+
+
 <script setup>
-import america from '@/assets/img/content/hero/hero_post_5.jpg'
-import clock from '@/assets/img/content/grid/grid_post_7.jpg'
-import pope from '@/assets/img/content/grid/grid_post_8.jpg'
+import america from "@/assets/img/content/hero/hero_post_5.jpg";
+import clock from "@/assets/img/content/grid/grid_post_7.jpg";
+import pope from "@/assets/img/content/grid/grid_post_8.jpg";
+
+// Images for Popular Posts sideBar
+import obama from "@/assets/img/content/post_small/post_small_5.jpg";
+import housing from "@/assets/img/content/post_small/post_small_6.jpg";
+import warren from "@/assets/img/content/post_small/post_small_7.jpg";
+import flags from "@/assets/img/content/post_small/post_small_8.jpg";
+import rushmore from "@/assets/img/content/post_small/post_small_9.jpg";
+import california from "@/assets/img/content/post_small/post_small_10.jpg";
+import protest from "@/assets/img/content/post_small/post_small_11.jpg";
+import heat from "@/assets/img/content/post_small/post_small_12.jpg";
+const popularPostData = [
+  {
+    text: "Barack Obama and Family Visit Balinese Paddy Fields",
+    image: obama,
+  },
+  {
+    text: "Liberals to outline long-term Indigenous housing plan in budge",
+    image: housing,
+  },
+  {
+    text: "5 Pieces of Hard-Won Wisdom From Billionaire Warren Buffett",
+    image: warren,
+  },
+  {
+    text: "Liberals to outline long-term Indigenous housing plan in budge",
+    image: flags,
+  },
+  {
+    text: "This Secret Room In Mount Rushmore Is Having A Moment",
+    image: rushmore,
+  },
+  {
+    text: "California Democrats' snub of party icon Dianne Feinstein",
+    image: california,
+  },
+  {
+    text: "How To Find Protests In Your City When You Don’t Know Where To Start",
+    image: protest,
+  },
+  {
+    text: "Extreme Heat Waves Will Change How We Live. We’re Not Ready",
+    image: heat,
+  },
+];
+
+const headlineData = [
+  {
+    key: 1,
+    text: "It's not a concentration camp: Bangladesh defends plan to house Rohingya on island with armed police",
+  },
+  {
+    key: 2,
+    text: "Saudi Arabia to build opera house in bid to shed conservative image, lure tourists",
+  },
+  { key: 3, text: "SpaceX launches experimental Starlink internet satellites" },
+  {
+    key: 4,
+    text: "Canada seeks to get more women into UN peacekeeping operations",
+  },
+  {
+    key: 5,
+    text: "Ford North America president out after inappropriate behaviour",
+  },
+  {
+    key: 6,
+    text: "More than 90 Nigerian schoolgirls feared missing after Boko Haram attack video",
+  },
+  {
+    key: 7,
+    text: "Countries move too slowly against corruption, watchdog group says",
+  },
+  {
+    key: 8,
+    text: "U.S. Embassy targeted in Montenegro, attacker kills only himself",
+  },
+  {
+    key: 9,
+    text: "Amnesty says global superpowers are 'callously undermining the rights of millions'",
+  },
+  {
+    key: 10,
+    text: "U.S. Embassy targeted in Montenegro, attacker kills only himself",
+  },
+];
 </script>
 
 <template>
@@ -14,7 +113,7 @@ import pope from '@/assets/img/content/grid/grid_post_8.jpg'
           <article class="entry thumb thumb--size-3 thumb--mb-20">
             <div
               class="entry__img-holder thumb__img-holder"
-             :style="{backgroundImage : `url('${america}')`}"
+              :style="{ backgroundImage: `url('${america}')` }"
             >
               <div class="bottom-gradient"></div>
               <div class="thumb-text-holder thumb-text-holder--2">
@@ -130,254 +229,33 @@ import pope from '@/assets/img/content/grid/grid_post_8.jpg'
         <aside class="widget widget-headlines">
           <h4 class="widget-title">More Headlines</h4>
           <!-- Slider -->
-          <div id="owl-headlines" class="owl-carousel owl-theme">
-            <div class="owl-item">
-              <ul class="post-list-small post-list-small--1">
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >'It's not a concentration camp': Bangladesh defends
-                          plan to house Rohingya on island with armed police</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Saudi Arabia to build opera house in bid to shed
-                          conservative image, lure tourists</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >SpaceX launches experimental Starlink internet
-                          satellites</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Canada seeks to get more women into UN peacekeeping
-                          operations</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Ford North America president out after inappropriate
-                          behaviour</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >More than 90 Nigerian schoolgirls feared missing
-                          after Boko Haram attack video</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Countries move too slowly against corruption,
-                          watchdog group says</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >U.S. Embassy targeted in Montenegro, attacker kills
-                          only himself</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Amnesty says global superpowers are 'callously
-                          undermining the rights of millions'</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >U.S. Embassy targeted in Montenegro, attacker kills
-                          only himself</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-              </ul>
-            </div>
-            <div class="owl-item">
-              <ul class="post-list-small post-list-small--1">
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >'It's not a concentration camp': Bangladesh defends
-                          plan to house Rohingya on island with armed police</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Saudi Arabia to build opera house in bid to shed
-                          conservative image, lure tourists</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >SpaceX launches experimental Starlink internet
-                          satellites</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Canada seeks to get more women into UN peacekeeping
-                          operations</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Ford North America president out after inappropriate
-                          behaviour</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >More than 90 Nigerian schoolgirls feared missing
-                          after Boko Haram attack video</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Countries move too slowly against corruption,
-                          watchdog group says</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >U.S. Embassy targeted in Montenegro, attacker kills
-                          only himself</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >Amnesty says global superpowers are 'callously
-                          undermining the rights of millions'</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-                <li class="post-list-small__item">
-                  <article class="post-list-small__entry clearfix">
-                    <div class="post-list-small__body">
-                      <h3 class="post-list-small__entry-title">
-                        <a href="single-post-politics.html"
-                          >U.S. Embassy targeted in Montenegro, attacker kills
-                          only himself</a
-                        >
-                      </h3>
-                    </div>
-                  </article>
-                </li>
-              </ul>
+          <div
+            id="owl-headlines"
+            class="owl-carousel owl-theme owl-loaded owl-drag"
+          >
+            <div class="owl-stage-outer">
+              <div class="owl-stage">
+                <transition-group name="move">
+                  <div class="owl-item">
+                    <ul class="post-list-small post-list-small--1">
+                      <li
+                        class="post-list-small__item"
+                        v-for="data in headlineData"
+                        :key="data.key"
+                      >
+                        <article class="post-list-small__entry clearfix">                        <div class="post-list-small__body">
+                            <h3 class="post-list-small__entry-title">
+                              <a href="single-post-politics.html">{{
+                                data.text
+                              }}</a>
+                            </h3>
+                          </div>
+                        </article>
+                      </li>
+                    </ul>
+                  </div>
+                </transition-group>
+              </div>
             </div>
           </div>
           <!-- end slider -->
@@ -410,13 +288,17 @@ import pope from '@/assets/img/content/grid/grid_post_8.jpg'
         <aside class="widget widget-popular-posts">
           <h4 class="widget-title">Weekly Popular</h4>
           <ul class="post-list-small post-list-small--1">
-            <li class="post-list-small__item">
+            <li
+              class="post-list-small__item"
+              v-for="data in popularPostData"
+              :key="data.image"
+            >
               <article class="post-list-small__entry clearfix">
                 <div class="post-list-small__img-holder">
                   <div class="thumb-container thumb-80">
                     <a href="single-post-politics.html">
                       <img
-                        data-src="@/assets/img/content/post_small/post_small_5.jpg"
+                        :data-src="data.image"
                         src="@/assets/img/empty.png"
                         alt=""
                         class="lazyload"
@@ -426,176 +308,7 @@ import pope from '@/assets/img/content/grid/grid_post_8.jpg'
                 </div>
                 <div class="post-list-small__body">
                   <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >Barack Obama and Family Visit Balinese Paddy Fields</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_6.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >Liberals to outline long-term Indigenous housing plan in
-                      budge</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_7.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >5 Pieces of Hard-Won Wisdom From Billionaire Warren
-                      Buffett</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_8.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >Liberals to outline long-term Indigenous housing plan in
-                      budge</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_9.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >This Secret Room In Mount Rushmore Is Having A Moment</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_10.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >California Democrats' snub of party icon Dianne
-                      Feinstein</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_11.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >How To Find Protests In Your City When You Don’t Know
-                      Where To Start</a
-                    >
-                  </h3>
-                </div>
-              </article>
-            </li>
-            <li class="post-list-small__item">
-              <article class="post-list-small__entry clearfix">
-                <div class="post-list-small__img-holder">
-                  <div class="thumb-container thumb-80">
-                    <a href="single-post-politics.html">
-                      <img
-                        data-src="@/assets/img/content/post_small/post_small_12.jpg"
-                        src="@/assets/img/empty.png"
-                        alt=""
-                        class="lazyload"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div class="post-list-small__body">
-                  <h3 class="post-list-small__entry-title">
-                    <a href="single-post-politics.html"
-                      >Extreme Heat Waves Will Change How We Live. We’re Not
-                      Ready</a
-                    >
+                    <a href="single-post-politics.html">{{ data.text }}</a>
                   </h3>
                 </div>
               </article>
