@@ -34,7 +34,7 @@
 
 <template>
   <!-- Navigation -->
-  <header :class="{'nav' :true, 'nav--1' : $route.path === '/politics' }">
+  <header :class="{'nav' :true, 'nav--1' : $route.path === '/politics', 'nav--2' : $route.path === '/fashion' }">
     <div class="nav__holder nav--sticky">
       <div class="container relative">
         <div class="flex-parent">
@@ -51,7 +51,7 @@
           </button>
 
           <!-- Logo -->
-          <a href="index.html" class="logo" v-show="$route.path=='/'">
+          <a href="index.html" class="logo" v-if="$route.path =='/' || $route.path == '/fashion'">
             <img
               class="logo__img"
               src="@/assets/img/logo_default.png"
@@ -62,6 +62,7 @@
               alt="logo"
             />
           </a>
+          <div v-else></div>
 
           <!-- Nav-wrap -->
           <nav class="flex-child nav__wrap d-none d-lg-block">
@@ -71,7 +72,7 @@
                 <ul class="nav__dropdown-menu">
                   <li><a href="index.html">Home Default</a></li>
                   <li><RouterLink to="/politics">Home Politics</RouterLink></li>
-                  <li><a href="index-fashion.html">Home Fashion</a></li>
+                  <li><RouterLink to="/fashion">Home Fashion</RouterLink></li>
                   <li><a href="index-games.html">Home Games</a></li>
                   <li><a href="index-videos.html">Home Videos</a></li>
                   <li><a href="index-music.html">Home Music</a></li>

@@ -3,7 +3,6 @@ import "@/assets/css/bootstrap.min.css";
 import "@/assets/css/style.css";
 import "@/assets/sass/style.scss";
 
-import "@/assets/css/bootstrap.min.css";
 import "@/assets/css/font-icons.css";
 import "@/assets/css/style.css";
 import "@/assets/img/favicon.ico";

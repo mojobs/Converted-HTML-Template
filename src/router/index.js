@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import PoliticsView from '@/views/PoliticsView.vue'
+import FashionView from '@/views/FashionView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,13 @@ const router = createRouter({
       name: 'politics',
       component: PoliticsView,
       meta : {bodyClass : 'home style-politics'}
+      
+    },
+    {
+      path: '/fashion',
+      name: 'fashion',
+      component: FashionView,
+      meta : {bodyClass : 'bg-light style-fashion'}
       
     },
   ],

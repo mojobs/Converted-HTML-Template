@@ -2,7 +2,8 @@
   <body
     :class="{
       'bg-light style-default style-rounded': $route.path == '/',
-      ' home style-politics': $route.path == '/politics',
+      'home style-politics': $route.path == '/politics',
+      'bg-light style-fashion' : $route.path == '/fashion'
     }"
   >
     <!-- Bg Overlay -->
