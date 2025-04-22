@@ -10,6 +10,11 @@ import hairwoman from "@/assets/img/content/list/list_post_9.jpg";
 import frenchCouple from "@/assets/img/content/list/list_post_10.jpg";
 import officeWoman from "@/assets/img/content/list/list_post_11.jpg";
 import gayDude from "@/assets/img/content/list/list_post_12.jpg";
+
+//Imports for the Latest Videos Background pictures
+import couple from '@/assets/img/content/grid/grid_post_18.jpg'
+import hotLady from '@/assets/img/content/grid/grid_post_19.jpg'
+import hotterLady from '@/assets/img/content/grid/grid_post_20.jpg'
 const latestNewsData = [
   {
     image: jeans,
@@ -51,6 +56,20 @@ const shoppingPicks = [
     text: "A Celebrity Guide to Wearing White Denim",
   }
 ];
+const latestVideosData =[
+    {
+        text: '9 Elegant Wedding-Guest Outfit Ideas You Can Always Rely Upon',
+        image : couple
+    },
+    {
+        text: 'Amazing Workwear Buys to Realise Your Office Attire Goals',
+        image : hotLady
+    },
+    {
+        text: 'Showcase Individuality—so Why Is It Creating a outfit?',
+        image : hotterLady
+    }
+]
 </script>
 
 <template>
@@ -253,12 +272,12 @@ const shoppingPicks = [
         <!-- Widget Latest Videos -->
         <aside class="widget widget-latest-videos">
           <h4 class="widget-title">Latest Videos</h4>
-          <article class="entry">
+          <article class="entry" v-for="data in latestVideosData">
             <div class="entry__img-holder">
               <a href="single-post-fashion.html">
                 <div class="thumb-container thumb-50">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_18.jpg"
+                    :data-src="data.image"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
@@ -271,57 +290,7 @@ const shoppingPicks = [
               <div class="entry__header">
                 <h2 class="entry__title">
                   <a href="single-post-fashion.html"
-                    >9 Elegant Wedding-Guest Outfit Ideas You Can Always Rely
-                    Upon</a
-                  >
-                </h2>
-              </div>
-            </div>
-          </article>
-          <article class="entry">
-            <div class="entry__img-holder">
-              <a href="single-post-fashion.html">
-                <div class="thumb-container thumb-50">
-                  <img
-                    data-src="@/assets/img/content/grid/grid_post_19.jpg"
-                    src="@/assets/img/empty.png"
-                    class="entry__img lazyload"
-                    alt=""
-                  />
-                </div>
-              </a>
-              <div class="entry__play-time"><i class="ui-play"></i>3:21</div>
-            </div>
-            <div class="entry__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post-fashion.html"
-                    >Amazing Workwear Buys to Realise Your Office Attire
-                    Goals</a
-                  >
-                </h2>
-              </div>
-            </div>
-          </article>
-          <article class="entry">
-            <div class="entry__img-holder">
-              <a href="single-post-fashion.html">
-                <div class="thumb-container thumb-50">
-                  <img
-                    data-src="@/assets/img/content/grid/grid_post_20.jpg"
-                    src="@/assets/img/empty.png"
-                    class="entry__img lazyload"
-                    alt=""
-                  />
-                </div>
-              </a>
-              <div class="entry__play-time"><i class="ui-play"></i>3:21</div>
-            </div>
-            <div class="entry__body">
-              <div class="entry__header">
-                <h2 class="entry__title">
-                  <a href="single-post-fashion.html"
-                    >Showcase Individuality—so Why Is It Creating a outfit?</a
+                    >{{ data.text }}</a
                   >
                 </h2>
               </div>
