@@ -3,6 +3,7 @@
 <GeneralSideBarComponent @close-sidebar="showSideBarContentOverlay"
 :sidebarvalue="isSideBarClicked"/>
 <FashionHeroComponent/>
+<FashionMainComponent/>
 
 </template>
 <script setup>
@@ -18,6 +19,7 @@ import GeneralNavBarComponent from '@/components/GenericComponents/GeneralNavBar
 import GeneralSideBarComponent from '@/components/GenericComponents/GeneralSideBarComponent.vue'
 import { onUnmounted, onMounted, ref } from 'vue'
 import FashionHeroComponent from '@/components/FashionViewComponents/FashionHeroComponent.vue'
+import FashionMainComponent from '@/components/FashionViewComponents/FashionMainComponent.vue'
 
 const isSideBarClicked = ref(false);
 const showSideBarContentOverlay = () => {

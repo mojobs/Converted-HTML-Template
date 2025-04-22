@@ -70,7 +70,7 @@
               <li class="nav__dropdown active">
                 <a href="index.html">Home</a>
                 <ul class="nav__dropdown-menu">
-                  <li><a href="index.html">Home Default</a></li>
+                  <li><RouterLink to="/">Home Default</RouterLink></li>
                   <li><RouterLink to="/politics">Home Politics</RouterLink></li>
                   <li><RouterLink to="/fashion">Home Fashion</RouterLink></li>
                   <li><a href="index-games.html">Home Games</a></li>
