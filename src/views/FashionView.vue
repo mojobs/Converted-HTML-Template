@@ -4,6 +4,8 @@
 :sidebarvalue="isSideBarClicked"/>
 <FashionHeroComponent/>
 <FashionMainComponent/>
+<InstagramContentComponent/>
+<FashionFooterComponent/>
 
 </template>
 <script setup>
@@ -20,6 +22,8 @@ import GeneralSideBarComponent from '@/components/GenericComponents/GeneralSideB
 import { onUnmounted, onMounted, ref } from 'vue'
 import FashionHeroComponent from '@/components/FashionViewComponents/FashionHeroComponent.vue'
 import FashionMainComponent from '@/components/FashionViewComponents/FashionMainComponent.vue'
+import InstagramContentComponent from '@/components/FashionViewComponents/InstagramContentComponent.vue'
+import FashionFooterComponent from '@/components/FashionViewComponents/FashionFooterComponent.vue'
 
 const isSideBarClicked = ref(false);
 const showSideBarContentOverlay = () => {

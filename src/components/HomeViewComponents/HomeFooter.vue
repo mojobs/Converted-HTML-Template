@@ -36,7 +36,7 @@ const popularPosts = [
                 />
               </a>
               <p class="copyright">
-                  &copy; <HomeCopyrightComponent/> Deus  |  Made by <a href="https://deothemes.com">DeoThemes</a>
+                   <HomeCopyrightComponent/> Deus  |  Made by <a href="https://deothemes.com">DeoThemes</a>
                 </p>
               <div class="socials socials--large socials--rounded mb-24">
                 <a href="#" class="social social-facebook" aria-label="facebook"

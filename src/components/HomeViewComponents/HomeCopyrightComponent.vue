@@ -1,6 +1,6 @@
 <template>
       <p class="copyright">
-                  &copy; {{currentYear}} Deus  |  Made by <a href="https://deothemes.com">DeoThemes</a>
+                  &copy; {{currentYear}}
                 </p>
 </template>
 
