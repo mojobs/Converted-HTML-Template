@@ -34,7 +34,7 @@
 
 <template>
   <!-- Navigation -->
-  <header :class="{'nav' :true, 'nav--1' : $route.path === '/politics', 'nav--2' : $route.path === '/fashion' }">
+  <header :class="{'nav' :true, 'nav--1' : $route.path === '/politics', 'nav--2' : $route.path === '/fashion' , 'nav--colored' : $route.path == '/game' }">
     <div class="nav__holder nav--sticky">
       <div class="container relative">
         <div class="flex-parent">
@@ -73,9 +73,9 @@
                   <li><RouterLink to="/">Home Default</RouterLink></li>
                   <li><RouterLink to="/politics">Home Politics</RouterLink></li>
                   <li><RouterLink to="/fashion">Home Fashion</RouterLink></li>
-                  <li><a href="index-games.html">Home Games</a></li>
-                  <li><a href="index-videos.html">Home Videos</a></li>
-                  <li><a href="index-music.html">Home Music</a></li>
+                  <li><RouterLink to="/game">Home Games</RouterLink></li>
+                  <li><RouterLink to="index-videos.html">Home Videos</RouterLink></li>
+                  <li><RouterLink to="index-music.html">Home Music</RouterLink></li>
                 </ul>
               </li>
 

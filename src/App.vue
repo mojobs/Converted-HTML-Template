@@ -3,7 +3,8 @@
     :class="{
       'bg-light style-default style-rounded': $route.path == '/',
       'home style-politics': $route.path == '/politics',
-      'bg-light style-fashion' : $route.path == '/fashion'
+      'bg-light style-fashion' : $route.path == '/fashion',
+      'style-games' : $route.path == '/game'
     }"
   >
     <!-- Bg Overlay -->
