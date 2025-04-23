@@ -1,10 +1,17 @@
 <script setup>
+import GameFooter from '@/components/GameViewComponents/GameFooter.vue';
 import GameHeroSliderComponent from '@/components/GameViewComponents/GameHeroSliderComponent.vue';
 import GameViewMainComponent from '@/components/GameViewComponents/GameViewMainComponent.vue';
 import GeneralNavBarComponent from '@/components/GenericComponents/GeneralNavBarComponent.vue';
 import HomeViewTopBarComponent from '@/components/HomeViewComponents/HomeViewTopBarComponent.vue';
-import { onMounted, onUnmounted } from 'vue';
+import GeneralSideBarComponent from '@/components/GenericComponents/GeneralSideBarComponent.vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
+
+const isSideBarClicked = ref(false);
+const showSideBarContentOverlay = () => {
+  isSideBarClicked.value = !isSideBarClicked.value;
+};
 let themeLink = null
 
 onMounted(() => {
@@ -25,7 +32,10 @@ onUnmounted(() => {
 
 <template>
 <HomeViewTopBarComponent/>
-<GeneralNavBarComponent/>
+<GeneralNavBarComponent @open-sidebar="showSideBarContentOverlay"/>
+<GeneralSideBarComponent @close-sidebar="showSideBarContentOverlay"
+:sidebarvalue="isSideBarClicked"/>
 <GameHeroSliderComponent/>
 <GameViewMainComponent/>
+<GameFooter/>
 </template>

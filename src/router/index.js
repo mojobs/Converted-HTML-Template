@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import PoliticsView from '@/views/PoliticsView.vue'
 import FashionView from '@/views/FashionView.vue'
 import GameView from '@/views/GameView.vue'
+import VideoView from '@/views/VideoView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,6 +34,13 @@ const router = createRouter({
       name: 'game',
       component: GameView,
       meta : {bodyClass : 'style-games'}
+      
+    },
+    {
+      path: '/videos',
+      name: 'videos',
+      component: VideoView,
+      meta : {bodyClass : 'style-videos'}
       
     }
   ],
