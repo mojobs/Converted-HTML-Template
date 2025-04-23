@@ -41,7 +41,7 @@ const youtubeVideosData = [
         text : " iPhone X Review – Pushing Me to Android",
         image : "https://i.ytimg.com/vi/MY0UBGX2FtA/default.jpg"
     }
-]
+];
 setCurrentYoutubeVideo(youtubeVideosData[0].url);
 </script>
 
