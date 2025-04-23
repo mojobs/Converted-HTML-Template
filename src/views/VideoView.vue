@@ -4,6 +4,7 @@ import HomeViewTopBarComponent from "@/components/HomeViewComponents/HomeViewTop
 import GeneralSideBarComponent from "@/components/GenericComponents/GeneralSideBarComponent.vue";
 import VideoFeaturedPostsComponent from "@/components/VideoViewComponents/VideoFeaturedPostsComponent.vue";
 import { onMounted, onUnmounted, ref } from "vue";
+import YoutubeVideoComponent from "@/components/VideoViewComponents/YoutubeVideoComponent.vue";
 
 const isSideBarClicked = ref(false);
 const showSideBarContentOverlay = () => {
@@ -36,4 +37,5 @@ onUnmounted(() => {
     :sidebarvalue="isSideBarClicked"
   />
   <VideoFeaturedPostsComponent />
+  <YoutubeVideoComponent/>
 </template>
