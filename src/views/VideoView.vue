@@ -6,6 +6,7 @@ import VideoFeaturedPostsComponent from "@/components/VideoViewComponents/VideoF
 import { onMounted, onUnmounted, ref } from "vue";
 import YoutubeVideoComponent from "@/components/VideoViewComponents/YoutubeVideoComponent.vue";
 import VideoMainComponent from "@/components/VideoViewComponents/VideoMainComponent.vue";
+import VideoFooterComponent from "@/components/VideoViewComponents/VideoFooterComponent.vue";
 
 const isSideBarClicked = ref(false);
 const showSideBarContentOverlay = () => {
@@ -40,4 +41,5 @@ onUnmounted(() => {
   <VideoFeaturedPostsComponent />
   <YoutubeVideoComponent/>
   <VideoMainComponent/>
+  <VideoFooterComponent/>
 </template>
