@@ -5,7 +5,8 @@
       'home style-politics': $route.path == '/politics',
       'bg-light style-fashion' : $route.path == '/fashion',
       'style-games' : $route.path == '/game',
-      'style-videos' : $route.path == '/videos'
+      'style-videos' : $route.path == '/videos',
+      'bg-dark style-music' : $route.path == '/music'
     }"
   >
     <!-- Bg Overlay -->

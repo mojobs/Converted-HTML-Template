@@ -4,6 +4,7 @@ import PoliticsView from '@/views/PoliticsView.vue'
 import FashionView from '@/views/FashionView.vue'
 import GameView from '@/views/GameView.vue'
 import VideoView from '@/views/VideoView.vue'
+import MusicView from '@/views/MusicView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +42,13 @@ const router = createRouter({
       name: 'videos',
       component: VideoView,
       meta : {bodyClass : 'style-videos'}
+      
+    },
+    {
+      path: '/music',
+      name: 'music',
+      component: MusicView,
+      meta : {bodyClass : 'bg-dark style-music'}
       
     }
   ],

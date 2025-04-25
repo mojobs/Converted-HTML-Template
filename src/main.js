@@ -14,14 +14,16 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import router from "./router";
 
-import { VueperSlides, VueperSlide } from "vueperslides";
-import "vueperslides/dist/vueperslides.css";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
 
 
 const app = createApp(App);
 
-app.component("VueperSlides", VueperSlides);
-app.component("VueperSlide", VueperSlide);
+app.component("SwiperSlide", SwiperSlide);
+app.component("Swiper", Swiper);
 app.use(createPinia());
 app.use(router);
 
