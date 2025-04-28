@@ -1,6 +1,7 @@
 <script setup>
 import GeneralNavBarComponent from '@/components/GenericComponents/GeneralNavBarComponent.vue';
 import HomeViewTopBarComponent from '@/components/HomeViewComponents/HomeViewTopBarComponent.vue';
+import MusicFooterComponent from '@/components/MusicViewComponent/MusicFooterComponent.vue';
 import MusicMainComponent from '@/components/MusicViewComponent/MusicMainComponent.vue';
 import MusicSliderComponent from '@/components/MusicViewComponent/MusicSliderComponent.vue';
 //import MusicSliderComponent2 from '@/components/MusicViewComponent/MusicSliderComponent2.vue';
@@ -28,4 +29,5 @@ onUnmounted(() => {
 <GeneralNavBarComponent/>
 <MusicSliderComponent/>
 <MusicMainComponent/>
+<MusicFooterComponent/>
 </template>

@@ -1,3 +1,14 @@
+<script setup>
+import americanIdol from '@/assets/img/content/grid/grid_post_33.jpg'
+import electricGuitar from '@/assets/img/content/grid/grid_post_34.jpg'
+import acousticGuitar from '@/assets/img/content/grid/grid_post_35.jpg'
+import blackCouple from '@/assets/img/content/grid/grid_post_36.jpg'
+import drums from '@/assets/img/content/grid/grid_post_37.jpg'
+import hotSinger from '@/assets/img/content/grid/grid_post_38.jpg'
+
+</script>
+
+
 <template>
   <div
     class="main-container container content-box content-box--pt-108"
@@ -8,181 +19,6 @@
       <div class="title-wrap title-wrap--line title-wrap--pr">
         <h3 class="section-title">Upcoming Events</h3>
       </div>
-
-      <!-- Slider -->
-      <div
-        id="owl-posts-3-items"
-        class="owl-carousel owl-theme owl-carousel--arrows-outside"
-      >
-        <article class="entry card card--1">
-          <div class="entry__img-holder card__img-holder">
-            <a href="single-post-music.html">
-              <div class="thumb-container thumb-70">
-                <img
-                  data-src="@/assets/img/content/carousel/carousel_post_13.jpg"
-                  src="@/assets/img/empty.png"
-                  class="entry__img lazyload"
-                  alt=""
-                />
-                <div class="entry-date-label">
-                  <div class="entry-date-label__weekday">thu</div>
-                  <div class="entry-date-label__day">23</div>
-                  <div class="entry-date-label__month">aug</div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="entry__body card__body">
-            <div class="entry__header">
-              <ul class="entry__meta">
-                <li class="entry__meta-category">
-                  <a href="#">Festivals</a>
-                </li>
-              </ul>
-              <h2 class="entry__title">
-                <a href="single-post-music.html"
-                  >ROMANCING THE CLASSICS - PPO 35th Concert Season 2017–2018</a
-                >
-              </h2>
-              <ul class="entry__meta">
-                <li class="entry__meta-author">
-                  <span>by</span>
-                  <a href="#">DeoThemes</a>
-                </li>
-                <li class="entry__meta-date">Jan 21, 2018</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="entry card card--1">
-          <div class="entry__img-holder card__img-holder">
-            <a href="single-post-music.html">
-              <div class="thumb-container thumb-70">
-                <img
-                  data-src="@/assets/img/content/carousel/carousel_post_14.jpg"
-                  src="@/assets/img/empty.png"
-                  class="entry__img lazyload"
-                  alt=""
-                />
-                <div class="entry-date-label">
-                  <div class="entry-date-label__weekday">wed</div>
-                  <div class="entry-date-label__day">29</div>
-                  <div class="entry-date-label__month">aug</div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="entry__body card__body">
-            <div class="entry__header">
-              <ul class="entry__meta">
-                <li class="entry__meta-category">
-                  <a href="#">Festivals</a>
-                </li>
-              </ul>
-              <h2 class="entry__title">
-                <a href="single-post-music.html"
-                  >FOUR - An Anniversary Show, With Special Guest "BEN &amp;
-                  BEN"</a
-                >
-              </h2>
-              <ul class="entry__meta">
-                <li class="entry__meta-author">
-                  <span>by</span>
-                  <a href="#">DeoThemes</a>
-                </li>
-                <li class="entry__meta-date">Jan 21, 2018</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="entry card card--1">
-          <div class="entry__img-holder card__img-holder">
-            <a href="single-post-music.html">
-              <div class="thumb-container thumb-70">
-                <img
-                  data-src="@/assets/img/content/carousel/carousel_post_15.jpg"
-                  src="@/assets/img/empty.png"
-                  class="entry__img lazyload"
-                  alt=""
-                />
-                <div class="entry-date-label">
-                  <div class="entry-date-label__weekday">sat</div>
-                  <div class="entry-date-label__day">15</div>
-                  <div class="entry-date-label__month">aug</div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="entry__body card__body">
-            <div class="entry__header">
-              <ul class="entry__meta">
-                <li class="entry__meta-category">
-                  <a href="#">Concerts</a>
-                </li>
-              </ul>
-              <h2 class="entry__title">
-                <a href="single-post-music.html"
-                  >Tickets For Sam Smith's Show in Manila in October Go On Sale
-                  Next Week!</a
-                >
-              </h2>
-              <ul class="entry__meta">
-                <li class="entry__meta-author">
-                  <span>by</span>
-                  <a href="#">DeoThemes</a>
-                </li>
-                <li class="entry__meta-date">Jan 21, 2018</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-        <article class="entry card card--1">
-          <div class="entry__img-holder card__img-holder">
-            <a href="single-post-music.html">
-              <div class="thumb-container thumb-70">
-                <img
-                  data-src="@/assets/img/content/carousel/carousel_post_14.jpg"
-                  src="@/assets/img/empty.png"
-                  class="entry__img lazyload"
-                  alt=""
-                />
-                <div class="entry-date-label">
-                  <div class="entry-date-label__weekday">wed</div>
-                  <div class="entry-date-label__day">29</div>
-                  <div class="entry-date-label__month">aug</div>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="entry__body card__body">
-            <div class="entry__header">
-              <ul class="entry__meta">
-                <li class="entry__meta-category">
-                  <a href="#">Festivals</a>
-                </li>
-              </ul>
-              <h2 class="entry__title">
-                <a href="single-post-music.html"
-                  >FOUR - An Anniversary Show, With Special Guest "BEN &amp;
-                  BEN"</a
-                >
-              </h2>
-              <ul class="entry__meta">
-                <li class="entry__meta-author">
-                  <span>by</span>
-                  <a href="#">DeoThemes</a>
-                </li>
-                <li class="entry__meta-date">Jan 21, 2018</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>
-      <!-- end slider -->
     </section>
     <!-- end upcoming events -->
 
@@ -317,7 +153,7 @@
               <a href="single-post-music.html">
                 <div class="thumb-container thumb-65">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_33.jpg"
+                    :data-src="americanIdol"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
@@ -355,7 +191,7 @@
           <article class="entry thumb thumb--size-3 thumb--mb-20">
             <div
               class="entry__img-holder thumb__img-holder"
-              style="background-image: url('img/content/grid/grid_post_34.jpg')"
+              :style="{backgroundImage : `url('${electricGuitar}')`}"
             >
               <div class="bottom-gradient"></div>
               <div class="thumb-text-holder thumb-text-holder--2">
@@ -390,7 +226,7 @@
               <a href="single-post-music.html">
                 <div class="thumb-container thumb-65">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_35.jpg"
+                    :data-src="acousticGuitar"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
@@ -430,7 +266,7 @@
           <article class="entry thumb thumb--size-3 thumb--mb-20">
             <div
               class="entry__img-holder thumb__img-holder"
-              style="background-image: url('img/content/grid/grid_post_36.jpg')"
+              :style="{backgroundImage: `url('${blackCouple}')`}"
             >
               <div class="bottom-gradient"></div>
               <div class="thumb-text-holder thumb-text-holder--2">
@@ -465,7 +301,7 @@
               <a href="single-post-music.html">
                 <div class="thumb-container thumb-65">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_37.jpg"
+                    :data-src="drums"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
@@ -505,7 +341,7 @@
               <a href="single-post-music.html">
                 <div class="thumb-container thumb-65">
                   <img
-                    data-src="@/assets/img/content/grid/grid_post_38.jpg"
+                    :data-src="hotSinger"
                     src="@/assets/img/empty.png"
                     class="entry__img lazyload"
                     alt=""
