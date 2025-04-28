@@ -732,7 +732,6 @@
   &__item {
     cursor: pointer;
     padding: 5px;
-    opacity: .3;
     @include transition($all);
   }
   

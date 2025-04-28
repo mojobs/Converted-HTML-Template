@@ -14,6 +14,8 @@ import concert from "@/assets/img/content/hero/hero_post_21.jpg"
 import guitarist from "@/assets/img/content/hero/hero_post_22.jpg"
 
 const thumbsSwiper = ref(null);
+const currentIndexValue = ref(0)
+const currentThumbIndex = ref(0);
 
 const modules = [FreeMode, Navigation, Thumbs];
 
@@ -21,26 +23,35 @@ const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
 
+const onSlideChange = (swiper) => {
+  currentIndexValue.value = swiper.activeIndex
+}
+
+
 const thumbsSwiperData = [
   {
+    id : 1,
     image: new URL(
       "@/assets/img/content/hero/hero_post_19_thumb.jpg",
       import.meta.url
     ).href,
   },
   {
+    id: 2,
     image: new URL(
       "@/assets/img/content/hero/hero_post_20_thumb.jpg",
       import.meta.url
     ).href,
   },
   {
+    id: 3,
     image: new URL(
       "@/assets/img/content/hero/hero_post_21_thumb.jpg",
       import.meta.url
     ).href,
   },
   {
+    id: 4,
     image: new URL(
       "@/assets/img/content/hero/hero_post_22_thumb.jpg",
       import.meta.url
@@ -53,6 +64,7 @@ const thumbsSwiperData = [
   <section class="hero-slider-1">
     <!-- Main Swiper -->
     <swiper
+    @slideChange="onSlideChange"
       :loop="true"
       :spaceBetween="10"
       :navigation="true"
@@ -176,10 +188,10 @@ const thumbsSwiperData = [
          
         >
           <swiper-slide v-for="(thumb, index) in thumbsSwiperData" :key="index">
-            <div class="carousel-cell">
+            <div :class="{'is-selected is-nav-selected' : currentIndexValue == index}" :style="{opacity : currentIndexValue == index ? 1 : 0.5}">
               <div class="carousel-thumbs__item">
-                <div class="carousel-thumbs__img-holder">
-                  <img :src="thumb.image" alt="thumb" />
+                <div class="carousel-thumbs__img-holder" >
+                  <img :src="thumb.image" alt="thumb"/>
                 </div>
               </div>
             </div>
@@ -199,8 +211,5 @@ const thumbsSwiperData = [
   top: 50px;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  
-  
-}
+}    
 </style>

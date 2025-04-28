@@ -2260,7 +2260,6 @@ img.mfp-img {
 }
 .carousel-main .carousel-cell {
   left: 0 !important;
-  opacity: 0;
   transition: opacity 0.7s ease-in-out;
   z-index: -1;
 }
@@ -2283,7 +2282,6 @@ img.mfp-img {
 .carousel-thumbs__item {
   cursor: pointer;
   padding: 5px;
-  opacity: 0.3;
   transition: all 0.3s ease-in-out;
 }
 .carousel-thumbs .carousel-cell {
